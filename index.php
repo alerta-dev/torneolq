@@ -1,7 +1,11 @@
-<?php include("includes/header.php"); ?>
-<div class="inicio">
-    <div class="background">
-        <h1>¡Bienvenidos al TorneoLq!</h1>
-        <p>Un torneo de creadores donde la creatividad es el límite.</p>
-    </div>
-</div>
+<?php
+$route = $_GET['route'] ?? 'inicio';
+
+if ($route == 'inicio') {
+    include 'inicio.php';
+} elseif ($route == 'ranking') {
+    include 'ranking.php';
+} else {
+    echo "<h1>404 - Página no encontrada</h1>";
+}
+?>
